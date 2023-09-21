@@ -1,7 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
-import CustomButton from '../../componentes/CustomButton/CustomButton';
+import CustomButton from '../../componentes/CustomButton';
 import { useNavigation } from "@react-navigation/native";
+
+
+import logo from '../../imagenes/foto1.png'; 
 
 const HomeScreen = () => {
     const username = 'Juan';
@@ -38,6 +41,11 @@ const HomeScreen = () => {
                 text="Llamar al 911"
                 backgroundColor="#D50000"
                 foregroundColor="#FFFFFF"
+            />
+            <Image
+                    source={logo}
+                    style={[styles.logo, {height: height * 0.3}]}
+                    resizeMode="contain"
             />
 
             <CustomButton

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import CustomInput from "../../componentes/CustomButton/CustomButton";
-import CustomButton from "../../componentes/CustomInput/CustomInput";
-import SocialSignInButtons from "../../componentes/SocialSignInButtons/SocialSignInButtons";
+import { View, Text, StyleSheet, ScrollView, Image, useWindowDimensions } from 'react-native'; 
+import CustomInput from "../../componentes/CustomInput";
+import CustomButton from "../../componentes/CustomButton";
+import SocialSignInButtons from "../../componentes/SocialSignInButtons";
 import { useNavigation } from "@react-navigation/native";
+
+import logo from '../../imagenes/pngwing.com 9.png';
 
 const RegisterScreen = () => {
     const [username, setUsername] = useState('');
@@ -11,6 +13,7 @@ const RegisterScreen = () => {
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const navigation = useNavigation();
+    const { height } = useWindowDimensions(); // Obtiene la altura de la ventana
 
     const handleCreateAccountPressed = () => {
         navigation.navigate('Mail Confirmation');
@@ -27,7 +30,14 @@ const RegisterScreen = () => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} >
             <View style={styles.root} >
+              
+
                 <Text style={styles.title} > Crear Cuenta </Text>
+                <Image
+                    source={logo}
+                    style={[styles.logo, { height: height * 0.3 }]} // Usa la altura de la ventana para la imagen
+                    resizeMode="contain"
+                />
 
                 <CustomInput
                     placeholder='Usuario'
@@ -59,6 +69,7 @@ const RegisterScreen = () => {
                     onPress={handleCreateAccountPressed}
                     text="Crear cuenta"
                 />
+               
 
                 <Text style={styles.text}>
                     Al registrar declaro que acepto los{' '}
@@ -96,6 +107,11 @@ const styles = StyleSheet.create(
         },
         link: {
             color: '#FDB075',
+        },
+        logo: {
+            width: '50%',
+            maxHeight: 100,
+            
         }
     }
 )

@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import CustomButton from '../../componentes/CustomButton/CustomButton';
+import CustomButton from '../../componentes/CustomButton';
 
 const FamilyMembersListScreen = () => {
     const username = 'Juan';

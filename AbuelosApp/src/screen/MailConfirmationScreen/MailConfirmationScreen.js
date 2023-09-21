@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import CustomInput from '../../componentes/CustomButton/CustomButton';
-import CustomButton from '../../componentes/CustomInput/CustomInput'; 
+import CustomInput from '../../componentes/CustomButton';
+import CustomButton from '../../componentes/CustomInput'; 
 import { useNavigation } from "@react-navigation/native";
 
 const MailConfirmationScreen = () => {

@@ -1,6 +1,9 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
-import CustomButton from '../../componentes/CustomButton/CustomButton';
+import CustomButton from '../../componentes/CustomButton';
+
+
+import logo from '../../imagenes/pngwing.com (2).png'
 
 const FarmacyListScreen = () => {
     const username = '......';
@@ -28,6 +31,12 @@ const FarmacyListScreen = () => {
     return (
         <View>
             <Text>Configuración</Text>
+
+            <Image
+                    source={logo}
+                    style={[styles.logo, {height: height * 0.3}]}
+                    resizeMode="contain"
+                />
 
             <CustomButton
                 onPress={callHospital}

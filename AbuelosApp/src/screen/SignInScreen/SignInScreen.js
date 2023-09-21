@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { View, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
-import CustomInput from "../../componentes/CustomInput";
-import CustomButton from '../../componentes/CustomButton'
+import CustomInput from '../../componentes/CustomInput';
+import CustomButton from '../../componentes/CustomButton';
 import SocialSignInButtons from "../../componentes/SocialSignInButtons";
 import { useNavigation } from "@react-navigation/native";
+
+import logo from '../../imagenes/pngwing.com (1).png';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -30,11 +32,11 @@ const SignInScreen = () => {
             <View
                 style={styles.root}
             >
-                <Image
-                    source={logo}
-                    style={[styles.logo, {height: height * 0.3}]}
-                    resizeMode="contain"
-                />
+               <Image
+                source={logo}
+                style={[styles.logo, { height: height * 0.3 }]}
+                resizeMode="contain"
+            />
 
                 <CustomInput
                     placeholder='Correo Electronico'

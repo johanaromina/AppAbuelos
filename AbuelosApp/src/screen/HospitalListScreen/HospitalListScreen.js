@@ -1,8 +1,10 @@
-import { View, Text } from 'react-native'
-import React, { useState } from 'react'
-import CustomButton from '../../componentes/CustomButton/CustomButton';
-import CustomInput from '../../componentes/CustomInput/CustomInput';
+import { View, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import CustomButton from '../../componentes/CustomButton';
+import CustomInput from '../../componentes/CustomInput';
 import { useNavigation } from '@react-navigation/native';
+
+import logo from '../../imagenes/pngwing.com (4).png'
 
 const HospitalListScreen = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -10,6 +12,7 @@ const HospitalListScreen = () => {
 
     const handleSavePressed = () => {
         navigation.goBack();
+    
     }
 
     const handleReturnPressed = () => {
@@ -18,7 +21,15 @@ const HospitalListScreen = () => {
 
     return (
         <View>
+            
+            <Image
+                    source={logo}
+                    style={[styles.logo, {height: height * 0.3}]}
+                    resizeMode="contain"
+                />
+            
             <Text>Lista de consultorios</Text>
+
 
             <CustomInput
                 placeholder="Ingrese numero de telefono"
@@ -39,5 +50,17 @@ const HospitalListScreen = () => {
         </View>
     )
 }
+const styles = StyleSheet.create(
+    {
+        root: {
+            alignItems: 'center',
+            padding: 20,
+        },
+        logo: {
+            width: '70%',
+            maxHeight: 200,
+        }
+    }
+)
 
 export default HospitalListScreen;
